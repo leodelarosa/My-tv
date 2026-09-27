@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import re
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
@@ -20,21 +21,67 @@ SPORTS = "sports"
 
 OUTPUT = Path("output/playlist.m3u")
 
+# ------------------------------------------------------------
+# Additional public playlists
+# ------------------------------------------------------------
 
-def fetch_json(name):
-    url = f"{API_BASE}/{name}.json"
+EXTERNAL_PLAYLISTS = {
+    "🌎 Free TV Worldwide": (
+        "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
+    ),
 
+    "⚽ Sports Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/sports.m3u"
+    ),
+
+    "🎬 Movies Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/movies.m3u"
+    ),
+
+    "📺 Series Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/series.m3u"
+    ),
+
+    "🎭 Entertainment Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/entertainment.m3u"
+    ),
+
+    "📚 Documentary Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/documentary.m3u"
+    ),
+
+    "👨‍👩‍👧 Family Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/family.m3u"
+    ),
+
+    "👦 Kids Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/kids.m3u"
+    ),
+
+    "🎵 Music Worldwide": (
+        "https://iptv-org.github.io/iptv/categories/music.m3u"
+    ),
+}
+
+
+def download_text(url):
     print(f"Downloading {url}")
 
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "my-tv-playlist-builder/1.0"
+            "User-Agent": "my-tv-playlist-builder/2.0"
         },
     )
 
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.loads(response.read().decode("utf-8"))
+    with urllib.request.urlopen(request, timeout=90) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+
+def fetch_json(name):
+    return json.loads(
+        download_text(f"{API_BASE}/{name}.json")
+    )
 
 
 def clean_text(value):
@@ -51,15 +98,6 @@ def clean_text(value):
 
 
 def has_target_area(feed):
-    """
-    A feed can have broadcast areas such as:
-        c/US
-        c/CA
-        c/GT
-        c/ES
-
-    We only keep the four countries we want.
-    """
 
     for area in feed.get("broadcast_area", []):
         if area.startswith("c/"):
@@ -80,6 +118,7 @@ def is_sports(channel):
 
 
 def stream_is_allowed(stream):
+
     labels = {
         str(label).lower()
         for label in stream.get("labels", [])
@@ -100,9 +139,6 @@ def stream_is_allowed(stream):
 
 
 def quality_score(stream):
-    """
-    Prefer higher quality streams when several are available.
-    """
 
     quality = stream.get("quality")
 
@@ -130,6 +166,113 @@ def quality_score(stream):
         return 480
 
     return 0
+
+
+# ------------------------------------------------------------
+# Parse external M3U playlists
+# ------------------------------------------------------------
+
+def parse_m3u(text, default_group):
+
+    entries = []
+
+    lines = [
+        line.strip()
+        for line in text.splitlines()
+        if line.strip()
+    ]
+
+    current_extinf = None
+
+    for line in lines:
+
+        if line.startswith("#EXTINF:"):
+            current_extinf = line
+            continue
+
+        if line.startswith("#"):
+            continue
+
+        if current_extinf:
+
+            url = line
+
+            if url.startswith(("http://", "https://")):
+
+                entries.append({
+                    "extinf": current_extinf,
+                    "url": url,
+                    "group": default_group,
+                })
+
+            current_extinf = None
+
+    return entries
+
+
+def replace_group_title(extinf, group):
+
+    new_group = clean_text(group)
+
+    pattern = r'group-title="[^"]*"'
+
+    replacement = f'group-title="{new_group}"'
+
+    if re.search(pattern, extinf):
+        return re.sub(pattern, replacement, extinf)
+
+    return extinf.replace(
+        "#EXTINF:-1 ",
+        f'#EXTINF:-1 group-title="{new_group}" ',
+        1
+    )
+
+
+def add_external_playlist(
+    output_entries,
+    seen_urls,
+    name,
+    url
+):
+
+    try:
+
+        text = download_text(url)
+
+        entries = parse_m3u(text, name)
+
+        added = 0
+
+        for entry in entries:
+
+            stream_url = entry["url"]
+
+            # Prevent duplicates
+            if stream_url in seen_urls:
+                continue
+
+            seen_urls.add(stream_url)
+
+            extinf = replace_group_title(
+                entry["extinf"],
+                name
+            )
+
+            output_entries.append(
+                (extinf, stream_url)
+            )
+
+            added += 1
+
+        print(
+            f"{name}: added {added} unique streams."
+        )
+
+    except Exception as error:
+
+        print(
+            f"WARNING: Could not load {name}: {error}"
+        )
 
 
 def main():
@@ -169,7 +312,7 @@ def main():
             logos_by_channel[channel_id] = logo.get("url")
 
     # ------------------------------------------------------------
-    # Select streams
+    # Select original country streams
     # ------------------------------------------------------------
 
     selected = {}
@@ -193,7 +336,9 @@ def main():
         if not stream_is_allowed(stream):
             continue
 
-        feed = feeds_by_key.get((channel_id, feed_id))
+        feed = feeds_by_key.get(
+            (channel_id, feed_id)
+        )
 
         if not feed:
             continue
@@ -208,14 +353,22 @@ def main():
         old = selected.get(key)
 
         if old is None:
+
             selected[key] = {
                 "stream": stream,
                 "channel": channel,
                 "feed": feed,
                 "country": country,
             }
+
         else:
-            if quality_score(stream) > quality_score(old["stream"]):
+
+            if (
+                quality_score(stream)
+                >
+                quality_score(old["stream"])
+            ):
+
                 selected[key] = {
                     "stream": stream,
                     "channel": channel,
@@ -223,10 +376,12 @@ def main():
                     "country": country,
                 }
 
-    print(f"Selected {len(selected)} streams.")
+    print(
+        f"Selected {len(selected)} country streams."
+    )
 
     # ------------------------------------------------------------
-    # Sort channels
+    # Organize country channels
     # ------------------------------------------------------------
 
     country_groups = defaultdict(list)
@@ -235,7 +390,6 @@ def main():
     for item in selected.values():
 
         channel = item["channel"]
-        feed = item["feed"]
 
         if is_sports(channel):
             sports.append(item)
@@ -245,6 +399,7 @@ def main():
         country_groups[country].append(item)
 
     for country in country_groups:
+
         country_groups[country].sort(
             key=lambda item: (
                 item["channel"].get("name", ""),
@@ -260,12 +415,221 @@ def main():
     )
 
     # ------------------------------------------------------------
-    # Write M3U
+    # Build output
     # ------------------------------------------------------------
 
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
 
-    with OUTPUT.open("w", encoding="utf-8", newline="\r\n") as file:
+    # Keep URLs unique across the entire playlist
+    seen_urls = set()
+
+    output_entries = []
+
+    # ------------------------------------------------------------
+    # Country sections
+    # ------------------------------------------------------------
+
+    for country_code in [
+        "US",
+        "CA",
+        "GT",
+        "ES"
+    ]:
+
+        items = country_groups.get(
+            country_code,
+            []
+        )
+
+        for item in items:
+
+            channel = item["channel"]
+            stream = item["stream"]
+            feed = item["feed"]
+
+            channel_id = channel["id"]
+
+            channel_name = channel.get(
+                "name",
+                channel_id
+            )
+
+            feed_name = feed.get("name")
+
+            display_name = channel_name
+
+            if (
+                feed_name
+                and feed_name != channel_name
+            ):
+                display_name = (
+                    f"{channel_name} - {feed_name}"
+                )
+
+            logo = logos_by_channel.get(
+                channel_id
+            )
+
+            spanish = is_spanish(feed)
+
+            language = (
+                " Español"
+                if spanish
+                else ""
+            )
+
+            group = TARGET_COUNTRIES[
+                country_code
+            ]
+
+            attributes = [
+                f'tvg-id="{clean_text(channel_id)}"',
+                f'group-title="{clean_text(group)}"',
+            ]
+
+            if logo:
+
+                attributes.append(
+                    f'tvg-logo="{clean_text(logo)}"'
+                )
+
+            if language:
+
+                attributes.append(
+                    'tvg-language="Español"'
+                )
+
+            extinf = (
+                "#EXTINF:-1 "
+                + " ".join(attributes)
+                + ","
+                + clean_text(display_name)
+            )
+
+            stream_url = stream["url"]
+
+            if stream_url not in seen_urls:
+
+                seen_urls.add(stream_url)
+
+                output_entries.append(
+                    (extinf, stream_url)
+                )
+
+    # ------------------------------------------------------------
+    # Sports from original country selection
+    # ------------------------------------------------------------
+
+    for item in sports:
+
+        channel = item["channel"]
+        stream = item["stream"]
+        feed = item["feed"]
+
+        channel_id = channel["id"]
+
+        channel_name = channel.get(
+            "name",
+            channel_id
+        )
+
+        feed_name = feed.get("name")
+
+        display_name = channel_name
+
+        if (
+            feed_name
+            and feed_name != channel_name
+        ):
+            display_name = (
+                f"{channel_name} - {feed_name}"
+            )
+
+        logo = logos_by_channel.get(
+            channel_id
+        )
+
+        country = item["country"]
+
+        spanish = is_spanish(feed)
+
+        if spanish:
+
+            group = (
+                "⚽ Sports - Español - "
+                + TARGET_COUNTRIES[country]
+            )
+
+        else:
+
+            group = (
+                "⚽ Sports - "
+                + TARGET_COUNTRIES[country]
+            )
+
+        attributes = [
+            f'tvg-id="{clean_text(channel_id)}"',
+            f'group-title="{clean_text(group)}"',
+        ]
+
+        if logo:
+
+            attributes.append(
+                f'tvg-logo="{clean_text(logo)}"'
+            )
+
+        if spanish:
+
+            attributes.append(
+                'tvg-language="Español"'
+            )
+
+        extinf = (
+            "#EXTINF:-1 "
+            + " ".join(attributes)
+            + ","
+            + clean_text(display_name)
+        )
+
+        stream_url = stream["url"]
+
+        if stream_url not in seen_urls:
+
+            seen_urls.add(stream_url)
+
+            output_entries.append(
+                (extinf, stream_url)
+            )
+
+    # ------------------------------------------------------------
+    # External public playlists
+    # ------------------------------------------------------------
+
+    print(
+        "\nLoading additional public playlists..."
+    )
+
+    for name, url in EXTERNAL_PLAYLISTS.items():
+
+        add_external_playlist(
+            output_entries,
+            seen_urls,
+            name,
+            url
+        )
+
+    # ------------------------------------------------------------
+    # Write final playlist
+    # ------------------------------------------------------------
+
+    with OUTPUT.open(
+        "w",
+        encoding="utf-8",
+        newline="\r\n"
+    ) as file:
 
         file.write("#EXTM3U\n")
 
@@ -273,132 +637,24 @@ def main():
             'x-tvg-url="https://iptv-org.github.io/epg/guides/us/epg.xml"\n'
         )
 
-        # --------------------------------------------------------
-        # Country sections
-        # --------------------------------------------------------
+        for extinf, stream_url in output_entries:
 
-        for country_code in ["US", "CA", "GT", "ES"]:
+            file.write(
+                extinf + "\n"
+            )
 
-            items = country_groups.get(country_code, [])
+            file.write(
+                stream_url + "\n"
+            )
 
-            if not items:
-                continue
+    print()
+    print(
+        f"FINAL PLAYLIST: {len(output_entries)} unique streams"
+    )
 
-            country_name = TARGET_COUNTRIES[country_code]
-
-            for item in items:
-
-                channel = item["channel"]
-                stream = item["stream"]
-                feed = item["feed"]
-
-                channel_id = channel["id"]
-                channel_name = channel.get("name", channel_id)
-                feed_name = feed.get("name")
-
-                display_name = channel_name
-
-                if feed_name and feed_name != channel_name:
-                    display_name = f"{channel_name} - {feed_name}"
-
-                logo = logos_by_channel.get(channel_id)
-
-                spanish = is_spanish(feed)
-
-                language = " Español" if spanish else ""
-
-                attributes = [
-                    'tvg-id="{}"'.format(clean_text(channel_id)),
-                    'group-title="{}"'.format(
-                        clean_text(TARGET_COUNTRIES[country_code])
-                    ),
-                ]
-
-                if logo:
-                    attributes.append(
-                        'tvg-logo="{}"'.format(clean_text(logo))
-                    )
-
-                if language:
-                    attributes.append(
-                        'tvg-language="Español"'
-                    )
-
-                file.write(
-                    "#EXTINF:-1 "
-                    + " ".join(attributes)
-                    + ","
-                    + clean_text(display_name)
-                    + "\n"
-                )
-
-                file.write(stream["url"] + "\n")
-
-        # --------------------------------------------------------
-        # Sports section
-        # --------------------------------------------------------
-
-        if sports:
-
-            for item in sports:
-
-                channel = item["channel"]
-                stream = item["stream"]
-                feed = item["feed"]
-
-                channel_id = channel["id"]
-                channel_name = channel.get("name", channel_id)
-                feed_name = feed.get("name")
-
-                display_name = channel_name
-
-                if feed_name and feed_name != channel_name:
-                    display_name = f"{channel_name} - {feed_name}"
-
-                logo = logos_by_channel.get(channel_id)
-
-                country = item["country"]
-
-                spanish = is_spanish(feed)
-
-                # Sports group
-                if spanish:
-                    group = (
-                        "⚽ Sports - Español - "
-                        + TARGET_COUNTRIES[country]
-                    )
-                else:
-                    group = (
-                        "⚽ Sports - "
-                        + TARGET_COUNTRIES[country]
-                    )
-
-                attributes = [
-                    'tvg-id="{}"'.format(clean_text(channel_id)),
-                    'group-title="{}"'.format(clean_text(group)),
-                ]
-
-                if logo:
-                    attributes.append(
-                        'tvg-logo="{}"'.format(clean_text(logo))
-                    )
-
-                if spanish:
-                    attributes.append(
-                        'tvg-language="Español"'
-                    )
-
-                file.write(
-                    "#EXTINF:-1 "
-                    + " ".join(attributes)
-                    + ","
-                    + clean_text(display_name)
-                    + "\n"
-                )
-
-                file.write(stream["url"] + "\n")
-
-    print(f"Playlist written to {OUTPUT}")
+    print(
+        f"Playlist written to {OUTPUT}"
+    )
 
 
 if __name__ == "__main__":
