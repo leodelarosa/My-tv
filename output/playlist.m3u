@@ -1,5 +1,4 @@
-#EXTM3U
-x-tvg-url="https://iptv-org.github.io/epg/guides/us/epg.xml,https://iptv-org.github.io/epg/guides/ca/epg.xml,https://iptv-org.github.io/epg/guides/gt/epg.xml,https://iptv-org.github.io/epg/guides/es/epg.xml"
+#EXTM3U x-tvg-url="https://iptv-org.github.io/epg/guides/us/epg.xml,https://iptv-org.github.io/epg/guides/ca/epg.xml,https://iptv-org.github.io/epg/guides/gt/epg.xml,https://iptv-org.github.io/epg/guides/es/epg.xml"
 #EXTINF:-1 tvg-id="FightNetwork.ca" tvg-name="Fight Network - SD" group-title="🇨🇦 CANADA • ⚽ Sports" tvg-logo="https://i.imgur.com/vlKPZHR.png" tvg-language="English",Fight Network - SD
 https://d12a2vxqkkh1bo.cloudfront.net/hls/main.m3u8
 #EXTINF:-1 tvg-id="GamePlus.ca" tvg-name="Game+ - SD" group-title="🇨🇦 CANADA • ⚽ Sports" tvg-logo="https://i.imgur.com/Lj69WbR.png" tvg-language="English",Game+ - SD
@@ -62,7 +61,7 @@ https://jmp2.uk/plu-67922858b83355184c699699.m3u8
 https://live20.bozztv.com/giatv/giatv-Infinittyott/Infinittyott/playlist.m3u8
 #EXTINF:-1 tvg-id="ThePriceIsRight.us" tvg-name="The Price Is Right - CA" group-title="🇨🇦 CANADA • 🎭 Entertainment" tvg-logo="https://images.pluto.tv/channels/64c2214c2a7f2200089a0c4b/colorLogoPNG.png" tvg-language="English",The Price Is Right - CA
 https://jmp2.uk/plu-64c2214c2a7f2200089a0c4b.m3u8
-#EXTINF:-1 tvg-id="MovieMusicbyStingray.ca" tvg-name="Movie Music by Stingray - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2CSpCdAxnLpqebMLZh6h7vMPk6LYpdqkVHA&amp;s" tvg-language="English",Movie Music by Stingray - HD
+#EXTINF:-1 tvg-id="MovieMusicbyStingray.ca" tvg-name="Movie Music by Stingray - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2CSpCdAxnLpqebMLZh6h7vMPk6LYpdqkVHA&s" tvg-language="English",Movie Music by Stingray - HD
 https://lotus.stingray.com/manifest/cmusic-cme004-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="MTVBiggestPop.us" tvg-name="MTV Biggest Pop - CA" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://i.imgur.com/AOaZmlS.png" tvg-language="English",MTV Biggest Pop - CA
 https://jmp2.uk/plu-65410176770cf1000866bf31.m3u8
@@ -72,13 +71,13 @@ https://jmp2.uk/plu-654100b4bdf3cf0008aa49c7.m3u8
 https://jmp2.uk/plu-6541010f770cf1000866be98.m3u8
 #EXTINF:-1 tvg-id="QelloConcertsbyStingray.ca" tvg-name="Qello Concerts by Stingray - SD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://i.imgur.com/IRyFTWq.png" tvg-language="English",Qello Concerts by Stingray - SD
 https://lotus.stingray.com/manifest/qello-qello001-montreal/samsungtvplus/master.m3u8
-#EXTINF:-1 tvg-id="StingrayCityscapes.ca" tvg-name="Stingray Cityscapes - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlXPCl4ze9lr2DnadYazKxuyyEEWmgO1O1Q&amp;s" tvg-language="English",Stingray Cityscapes - HD
+#EXTINF:-1 tvg-id="StingrayCityscapes.ca" tvg-name="Stingray Cityscapes - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlXPCl4ze9lr2DnadYazKxuyyEEWmgO1O1Q&s" tvg-language="English",Stingray Cityscapes - HD
 https://aka-live1050.delivery.roku.com/7572d640-7373-4137-8b14-a3afff395349/t2-origin/out/v1/live.m3u8
 #EXTINF:-1 tvg-id="StingrayClassicRock.ca" tvg-name="Stingray Classic Rock - SD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://i.imgur.com/FBgu8yB.png" tvg-language="English",Stingray Classic Rock - SD
 https://lotus.stingray.com/manifest/ose-101ads-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="StingrayClassica.ca" tvg-name="Stingray Classica - SD" group-title="🇨🇦 CANADA • 🎵 Music • Español" tvg-logo="https://i.imgur.com/nh1k5RC.png" tvg-language="Español",Stingray Classica - SD
 https://lotus.stingray.com/manifest/classica-cla008-montreal/samsungtvplus/master.m3u8
-#EXTINF:-1 tvg-id="StingrayCozyCafe.ca" tvg-name="Stingray Cozy Cafe - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-PtqqxxfI0SgHcNO5YJqxdufqnVtPFwpDvQ&amp;s" tvg-language="English",Stingray Cozy Cafe - HD
+#EXTINF:-1 tvg-id="StingrayCozyCafe.ca" tvg-name="Stingray Cozy Cafe - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-PtqqxxfI0SgHcNO5YJqxdufqnVtPFwpDvQ&s" tvg-language="English",Stingray Cozy Cafe - HD
 https://aka-live1050.delivery.roku.com/372c813e-1fb9-41d4-a4d0-5fbd803659c5/t2-origin/out/v1/live.m3u8
 #EXTINF:-1 tvg-id="StingrayDJAZZ.ca" tvg-name="Stingray DJAZZ - SD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Stingray_Djazz.png/960px-Stingray_Djazz.png" tvg-language="English",Stingray DJAZZ - SD
 https://lotus.stingray.com/manifest/djazz-djaads-montreal/samsungtvplus/master.m3u8
@@ -92,7 +91,7 @@ https://lotus.stingray.com/manifest/ose-115ads-montreal/samsungtvplus/master.m3u
 https://lotus.stingray.com/manifest/ose-107ads-montreal/samsungtvplus/master.m3u8
 #EXTINF:-1 tvg-id="StingrayHolidayHits.ca" tvg-name="Stingray Holiday Hits - SD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://i.imgur.com/4xVVKH8.png" tvg-language="English",Stingray Holiday Hits - SD
 https://lotus.stingray.com/manifest/ose-155ads-montreal/samsungtvplus/master.m3u8
-#EXTINF:-1 tvg-id="StingrayHolidayscapes.ca" tvg-name="Stingray Holidayscapes - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://images.plex.tv/photo?size=large-1920&amp;scale=1&amp;url=https%3A%2F%2Fprovider-static.plex.tv%2Fepg%2Fcms%2Fproduction%2F9cb4b15c-8244-4499-ae2c-9a92d4cdff6d%2F13895_SHS_Plex_Logos_Holidays_1500x1000_Dark-Background.png" tvg-language="English",Stingray Holidayscapes - HD
+#EXTINF:-1 tvg-id="StingrayHolidayscapes.ca" tvg-name="Stingray Holidayscapes - HD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fprovider-static.plex.tv%2Fepg%2Fcms%2Fproduction%2F9cb4b15c-8244-4499-ae2c-9a92d4cdff6d%2F13895_SHS_Plex_Logos_Holidays_1500x1000_Dark-Background.png" tvg-language="English",Stingray Holidayscapes - HD
 https://d10cyxntpn0bwm.cloudfront.net/master.m3u8
 #EXTINF:-1 tvg-id="StingrayHotCountry.ca" tvg-name="Stingray Hot Country - SD" group-title="🇨🇦 CANADA • 🎵 Music" tvg-logo="https://i.imgur.com/PZhxyIT.png" tvg-language="English",Stingray Hot Country - SD
 https://lotus.stingray.com/manifest/ose-108ads-montreal/samsungtvplus/master.m3u8
@@ -436,7 +435,7 @@ https://jmp2.uk/plu-5fc54366b04b2300072e31af.m3u8
 https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8
 #EXTINF:-1 tvg-id="RedBullTV.at" tvg-name="Red Bull TV - US" group-title="🇺🇸 USA • ⚽ Sports" tvg-logo="https://i.postimg.cc/8c78JM28/image.png" tvg-language="English",Red Bull TV - US
 https://0b73ace69ebb45eaa249bb87837cb958.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-644-WORBUSENFAST-LG_US/644/lgtv/hls/master/playlist.m3u8
-#EXTINF:-1 tvg-id="RightNowTV.us" tvg-name="Right Now TV - SD" group-title="🇺🇸 USA • ⚽ Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8rWZ8kofdRtH5CJ-BobD1pdpwVAq8COHt6Q&amp;s" tvg-language="English",Right Now TV - SD
+#EXTINF:-1 tvg-id="RightNowTV.us" tvg-name="Right Now TV - SD" group-title="🇺🇸 USA • ⚽ Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8rWZ8kofdRtH5CJ-BobD1pdpwVAq8COHt6Q&s" tvg-language="English",Right Now TV - SD
 https://a-cdn.klowdtv.com/live2/rightnowtv_720p/playlist.m3u8
 #EXTINF:-1 tvg-id="SlopesTV.us" tvg-name="Slopes TV - SD" group-title="🇺🇸 USA • ⚽ Sports" tvg-logo="https://i.imgur.com/8bzAfgK.png" tvg-language="English",Slopes TV - SD
 https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=2241
@@ -562,7 +561,7 @@ https://jmp2.uk/plu-66ba1e4446762a000855cd87.m3u8
 https://d6dg3ebeih71x.cloudfront.net/Gravitas_Movies.m3u8
 #EXTINF:-1 tvg-id="GrjngoWesternMovies.de" tvg-name="Grjngo Western Movies - SD" group-title="🇺🇸 USA • 🎬 Movies" tvg-logo="https://i.imgur.com/wFqhK3p.png" tvg-language="English",Grjngo Western Movies - SD
 https://amogonetworx-grjngo-3-dk.samsung.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="HallmarkMoviesMore.us" tvg-name="Hallmark Movies &amp; More - SD" group-title="🇺🇸 USA • 🎬 Movies" tvg-logo="https://provider-static.plex.tv/epg/cms/production/29af70d1-d3ba-4a16-bc4d-bd99e7e7def4/hallmark-movies-and-more_color.png" tvg-language="English",Hallmark Movies &amp; More - SD
+#EXTINF:-1 tvg-id="HallmarkMoviesMore.us" tvg-name="Hallmark Movies & More - SD" group-title="🇺🇸 USA • 🎬 Movies" tvg-logo="https://provider-static.plex.tv/epg/cms/production/29af70d1-d3ba-4a16-bc4d-bd99e7e7def4/hallmark-movies-and-more_color.png" tvg-language="English",Hallmark Movies & More - SD
 https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991709
 #EXTINF:-1 tvg-id="HBODrama.us" tvg-name="HBO Drama - East" group-title="🇺🇸 USA • 🎬 Movies • Español" tvg-logo="https://static.hbo.com/2025-09/HBO_Drama_Plex_Logo_bw.svg" tvg-language="Español",HBO Drama - East
 https://sra72yz.s.gy/HBO_DRAMA_HD.m3u8
@@ -678,9 +677,9 @@ https://cdn.whiplash.cc/whiplash-cinema/index.m3u8
 https://dbrb49pjoymg4.cloudfront.net/10001/99991745/hls/master.m3u8?ads.xumo_channelId=99991745
 #EXTINF:-1 tvg-id="30ASidewalks.us" tvg-name="30A Sidewalks - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/HSdwqZN.png" tvg-language="English",30A Sidewalks - SD
 https://30a-tv.com/sidewalks.m3u8
-#EXTINF:-1 tvg-id="30ATelevisionChannel.us" tvg-name="30A Television Channel - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHiYfIB01K44LIBG81aEGAmDuIWw8MA0f2w&amp;s" tvg-language="English",30A Television Channel - SD
+#EXTINF:-1 tvg-id="30ATelevisionChannel.us" tvg-name="30A Television Channel - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHiYfIB01K44LIBG81aEGAmDuIWw8MA0f2w&s" tvg-language="English",30A Television Channel - SD
 https://30a-tv.com/feeds/masters/30atv.m3u8
-#EXTINF:-1 tvg-id="AE.us" tvg-name="A&amp;E - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/960px-A%26E_Network_logo.svg.png" tvg-language="English",A&amp;E - East
+#EXTINF:-1 tvg-id="AE.us" tvg-name="A&E - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/960px-A%26E_Network_logo.svg.png" tvg-language="English",A&E - East
 http://23.239.31.26:8989/aande/index.m3u8
 #EXTINF:-1 tvg-id="AbsoluteRealitybyWETV.us" tvg-name="Absolute Reality by WE TV - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/Gtwk8ic.png" tvg-language="English",Absolute Reality by WE TV - SD
 https://amc-absolutereality-1-us.plex.wurl.tv/playlist.m3u8
@@ -712,7 +711,7 @@ https://jmp2.uk/plu-687ff00ff6bc08130f16ab81.m3u8
 https://jmp2.uk/plu-6661f11a41af6400080e90d8.m3u8
 #EXTINF:-1 tvg-id="BounceXL.us" tvg-name="Bounce XL - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/GzxgSkc.png" tvg-language="English",Bounce XL - SD
 https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-bouncexl-tablo/playlist.m3u8
-#EXTINF:-1 tvg-id="Buzzr.us" tvg-name="Buzzr - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122019/buzzr-01.png?XpxREagj3UuXaSkmg8dIrgARuDpSggra&amp;itok=lEDMDvuS" tvg-language="English",Buzzr - SD
+#EXTINF:-1 tvg-id="Buzzr.us" tvg-name="Buzzr - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122019/buzzr-01.png?XpxREagj3UuXaSkmg8dIrgARuDpSggra&itok=lEDMDvuS" tvg-language="English",Buzzr - SD
 http://23.237.104.106:8080/USA_BUZZR/index.m3u8
 #EXTINF:-1 tvg-id="CanelaTV.us" tvg-name="Canela TV - SD" group-title="🇺🇸 USA • 🎭 Entertainment • Español" tvg-logo="https://i.imgur.com/8Hllkpk.png" tvg-language="Español",Canela TV - SD
 https://d3cx6yargdnl7q.cloudfront.net/canelatv.m3u8
@@ -726,7 +725,7 @@ https://jmp2.uk/plu-60fb2f47c133270007327375.m3u8
 https://jmp2.uk/plu-5cf96b1c4f1ca3f0629f4bf0.m3u8
 #EXTINF:-1 tvg-id="Circle.us" tvg-name="Circle - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Circle_Network_logo.svg/960px-Circle_Network_logo.svg.png" tvg-language="English",Circle - SD
 https://circle-roku.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Comet.us" tvg-name="Comet - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc6hGmj4N40DjDiiDJZpq30HWu-4NrgcQok8XOS6g_o1YI798ogZyxIxM9k4NvdUFU_98&amp;usqp=CAU" tvg-language="English",Comet - SD
+#EXTINF:-1 tvg-id="Comet.us" tvg-name="Comet - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc6hGmj4N40DjDiiDJZpq30HWu-4NrgcQok8XOS6g_o1YI798ogZyxIxM9k4NvdUFU_98&usqp=CAU" tvg-language="English",Comet - SD
 https://fast-channels.sinclairstoryline.com/COMET/index.m3u8
 #EXTINF:-1 tvg-id="CrimePlusInvestigation.us" tvg-name="Crime + Investigation - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/4d/Crime_%2B_Investigation_Logo_10.2019.svg" tvg-language="English",Crime + Investigation - SD
 http://23.237.104.106:8080/USA_CRIME_INVESTIGATION/index.m3u8
@@ -738,7 +737,7 @@ https://jmp2.uk/plu-632b606e12a67b0007c9e371.m3u8
 https://jmp2.uk/plu-651f239d9c7aeb0008286823.m3u8
 #EXTINF:-1 tvg-id="DCCMakingtheTeam.us" tvg-name="DCC: Making the Team - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://images.pluto.tv/channels/5d40855b3fb0855028c99b6f/colorLogoPNG.png" tvg-language="English",DCC: Making the Team - SD
 https://jmp2.uk/plu-5d40855b3fb0855028c99b6f.m3u8
-#EXTINF:-1 tvg-id="E.us" tvg-name="E! - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRh4Jl1fTw1wQ6v7_xNCTUzhIJKiotiuU-brASo35hXeempwRDt7Y86J0&amp;s=10" tvg-language="English",E! - East
+#EXTINF:-1 tvg-id="E.us" tvg-name="E! - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRh4Jl1fTw1wQ6v7_xNCTUzhIJKiotiuU-brASo35hXeempwRDt7Y86J0&s=10" tvg-language="English",E! - East
 http://23.237.104.106:8080/USA_E/index.m3u8
 #EXTINF:-1 tvg-id="EKeepingUp.us" tvg-name="E! Keeping Up - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/9F7VYDM.png" tvg-language="English",E! Keeping Up - SD
 https://xumo-xumoent-vc-117-a3ga4.fast.nbcuni.com/live/master.m3u8
@@ -778,7 +777,7 @@ https://jmp2.uk/plu-6036e6e7ac69c400072afca2.m3u8
 https://edge1.lifestreamcdn.com/live/impactroku1/index.m3u8
 #EXTINF:-1 tvg-id="IONPlus.us" tvg-name="ION Plus - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/65/Ion_Plus_2024.svg" tvg-language="English",ION Plus - East
 https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01438-ewscrippscompan-ionplus-tablo/playlist.m3u8
-#EXTINF:-1 tvg-id="IONTV.us" tvg-name="ION TV - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiSmnYsts3yvFitiy9hspQUKgqp9mThaxVh0f4IDP12KZR52nEzg6UFmnycSjSJvA8kSA&amp;usqp=CAU" tvg-language="English",ION TV - East
+#EXTINF:-1 tvg-id="IONTV.us" tvg-name="ION TV - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiSmnYsts3yvFitiy9hspQUKgqp9mThaxVh0f4IDP12KZR52nEzg6UFmnycSjSJvA8kSA&usqp=CAU" tvg-language="English",ION TV - East
 http://23.237.104.106:8080/USA_ION/index.m3u8
 #EXTINF:-1 tvg-id="KContentbyCJENM.us" tvg-name="K-Content by CJ ENM - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/lRy231d.png" tvg-language="English",K-Content by CJ ENM - SD
 https://d2q0mzb9bm4w5z.cloudfront.net/68fee8e1_605a_437b_b968_244c3c0d5f24/hls/playlist.m3u8
@@ -820,7 +819,7 @@ https://nbculocallive.akamaized.net/hls/live/2037096/lx/use1.m3u8
 https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/olelo/G0125_013/playlist.m3u8
 #EXTINF:-1 tvg-id="OmideIranTV.us" tvg-name="Omid e Iran TV - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/CeMf68L.png" tvg-language="English",Omid e Iran TV - SD
 https://oitnhls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="Oxygen.us" tvg-name="Oxygen - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHllDxPOMAnkaIC6Z9eqYuUQTfrHqORezzfwXQv9F6hpTSKxk_HIoHCa3b5oqGlkPUQc&amp;usqp=CAU" tvg-language="English",Oxygen - East
+#EXTINF:-1 tvg-id="Oxygen.us" tvg-name="Oxygen - East" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHllDxPOMAnkaIC6Z9eqYuUQTfrHqORezzfwXQv9F6hpTSKxk_HIoHCa3b5oqGlkPUQc&usqp=CAU" tvg-language="English",Oxygen - East
 http://198.58.104.90:8989/oxygen/index.m3u8
 #EXTINF:-1 tvg-id="PeopleAreAwesome.us" tvg-name="People Are Awesome - SD" group-title="🇺🇸 USA • 🎭 Entertainment" tvg-logo="https://i.imgur.com/MsIx7Ax.png" tvg-language="English",People Are Awesome - SD
 https://mumbai-edge.smartplaytv.in/PeopleAreAwesome/index.m3u8
@@ -940,7 +939,7 @@ https://d3vgs3ro3x6v8a.cloudfront.net/Vevo_Hip_Hop.m3u8
 https://amg00056-amg00056c13-rakuten-es-3246.playouts.now.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="VevoPop.us" tvg-name="Vevo Pop - SD" group-title="🇺🇸 USA • 🎵 Music" tvg-logo="https://i.imgur.com/dZHktKR.png" tvg-language="English",Vevo Pop - SD
 https://d128y56w6v2kax.cloudfront.net/playlist/amg00056-vevotv-vevopopau-samsungau/playlist.m3u8
-#EXTINF:-1 tvg-id="VevoRB.us" tvg-name="Vevo R&amp;B - SD" group-title="🇺🇸 USA • 🎵 Music" tvg-logo="https://images.pluto.tv/channels/5da0d83f66c9700009b96d0e/featuredImage.jpg" tvg-language="English",Vevo R&amp;B - SD
+#EXTINF:-1 tvg-id="VevoRB.us" tvg-name="Vevo R&B - SD" group-title="🇺🇸 USA • 🎵 Music" tvg-logo="https://images.pluto.tv/channels/5da0d83f66c9700009b96d0e/featuredImage.jpg" tvg-language="English",Vevo R&B - SD
 https://d1hf773q57zx9s.cloudfront.net/Vevo_R_B.m3u8
 #EXTINF:-1 tvg-id="VevoRetroRock.us" tvg-name="Vevo Retro Rock - SD" group-title="🇺🇸 USA • 🎵 Music" tvg-logo="https://i.imgur.com/H1Aap4E.png" tvg-language="English",Vevo Retro Rock - SD
 https://d2lyea6if8kkz9.cloudfront.net/playlist/amg00056-vevotv-vevoretrorockau-samsungau/playlist.m3u8
@@ -1056,7 +1055,7 @@ https://vodcdn.bamboo-cloud.com/livehls/6a9f929f0630443af52c7162/master.m3u8
 https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=71
 #EXTINF:-1 tvg-id="SmurfTV.us" tvg-name="Smurf TV - SD" group-title="🇺🇸 USA • 👦 Kids" tvg-logo="https://img.static-ottera.com/prod/tg/linear_channel/thumbnails/widescreen/EJIyYyBMkbW5UntSCAkGp-uLla7Z8KWHvDjyEqoOf3k.jpg" tvg-language="English",Smurf TV - SD
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=4065
-#EXTINF:-1 tvg-id="StarzKidsFamily.us" tvg-name="Starz Kids &amp; Family - East" group-title="🇺🇸 USA • 👦 Kids • Español" tvg-logo="https://i.imgur.com/eE9FzEP.png" tvg-language="Español",Starz Kids &amp; Family - East
+#EXTINF:-1 tvg-id="StarzKidsFamily.us" tvg-name="Starz Kids & Family - East" group-title="🇺🇸 USA • 👦 Kids • Español" tvg-logo="https://i.imgur.com/eE9FzEP.png" tvg-language="Español",Starz Kids & Family - East
 http://23.237.104.106:8080/USA_STARZ_FAMILY/index.m3u8
 #EXTINF:-1 tvg-id="SuperSimpleSongs.us" tvg-name="Super Simple Songs - SD" group-title="🇺🇸 USA • 👦 Kids" tvg-logo="https://i.imgur.com/3k4F7O9.png" tvg-language="English",Super Simple Songs - SD
 https://janson-supersimplesongs-1-us.roku.wurl.tv/playlist.m3u8
@@ -1086,7 +1085,7 @@ https://linear-896.frequency.stream/dist/cineverse/896/hls/master/playlist.m3u8
 http://190.11.225.124:5000/live/freeform_hd/playlist.m3u8
 #EXTINF:-1 tvg-id="HallmarkChannel.us" tvg-name="Hallmark Channel - East" group-title="🇺🇸 USA • 👨‍👩‍👧 Family" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/960px-Hallmark_Channel.svg.png" tvg-language="English",Hallmark Channel - East
 http://23.237.104.106:8080/USA_HALLMARK/index.m3u8
-#EXTINF:-1 tvg-id="PositivTV.us" tvg-name="Positiv TV - SD" group-title="🇺🇸 USA • 👨‍👩‍👧 Family" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0VIzSua00Fkp3YfEiAsIKjZ6qSysSCEp8Ng&amp;s" tvg-language="English",Positiv TV - SD
+#EXTINF:-1 tvg-id="PositivTV.us" tvg-name="Positiv TV - SD" group-title="🇺🇸 USA • 👨‍👩‍👧 Family" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0VIzSua00Fkp3YfEiAsIKjZ6qSysSCEp8Ng&s" tvg-language="English",Positiv TV - SD
 https://livecdn.use1-0004.jwplive.com/live/sites/fGLyccP5/media/FoWynVnP/live.isml/.m3u8
 #EXTINF:-1 tvg-id="ShowtimeFamilyZone.us" tvg-name="Showtime Family Zone - East" group-title="🇺🇸 USA • 👨‍👩‍👧 Family" tvg-logo="https://i.imgur.com/qwJUawJ.png" tvg-language="English",Showtime Family Zone - East
 http://23.237.104.106:8080/USA_SHOWTIME_FAMILY/index.m3u8
@@ -1130,7 +1129,7 @@ https://lds-timeline-rakuten.amagi.tv/playlist.m3u8
 https://jmp2.uk/plu-60807fd5db701400078219c2.m3u8
 #EXTINF:-1 tvg-id="INWILD.nl" tvg-name="INWILD - SD" group-title="🇺🇸 USA • 📚 Documentary" tvg-logo="https://cdn.uc.assets.prezly.com/92770c71-9d6f-400f-8311-38e9cfec52c2/InWild_landscape-green.png" tvg-language="English",INWILD - SD
 https://amg00861-terninternation-inwild-samsunguk-w5wic.amagi.tv/playlist/amg00861-terninternation-inwild-samsunguk/playlist.m3u8
-#EXTINF:-1 tvg-id="LawCrime.us" tvg-name="Law &amp; Crime - SD" group-title="🇺🇸 USA • 📚 Documentary" tvg-logo="https://yt3.googleusercontent.com/CRP3YudPa55QypbDnIvuh3erLZTsn2HK8ESR-2fJFFiLJVf7US2CKQELCKK_UowmHA3wCjAdxg=s512-c-k-c0x00ffffff-no-rj" tvg-language="English",Law &amp; Crime - SD
+#EXTINF:-1 tvg-id="LawCrime.us" tvg-name="Law & Crime - SD" group-title="🇺🇸 USA • 📚 Documentary" tvg-logo="https://yt3.googleusercontent.com/CRP3YudPa55QypbDnIvuh3erLZTsn2HK8ESR-2fJFFiLJVf7US2CKQELCKK_UowmHA3wCjAdxg=s512-c-k-c0x00ffffff-no-rj" tvg-language="English",Law & Crime - SD
 https://a-cdn.klowdtv.com/live3/law_720p/playlist.m3u8
 #EXTINF:-1 tvg-id="LovePets.ca" tvg-name="Love Pets - US" group-title="🇺🇸 USA • 📚 Documentary" tvg-logo="https://lovepetstv.com/wp-content/uploads/2022/12/LovePets_Logo_SecondaryColor.png" tvg-language="English",Love Pets - US
 https://amg01576-blueskyeenterta-lovepetsemea-samsungse-ctamh.amagi.tv/playlist/amg01576-blueskyeenterta-lovepetsemea-samsungse/playlist.m3u8
@@ -1314,7 +1313,7 @@ https://30a-tv.com/feeds/vidaa/luxelife.m3u8
 https://30a-tv.com/feeds/720p/63.m3u8
 #EXTINF:-1 tvg-id="30ATheBeachShow.us" tvg-name="30A The Beach Show - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/0j5Aget.png" tvg-language="English",30A The Beach Show - SD
 https://30a-tv.com/beachy.m3u8
-#EXTINF:-1 tvg-id="30AWeLoveCars.us" tvg-name="30A We Love Cars - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxroqfE_hvEApKMQx03sSYXPeEh4ClaF5QSa8XfRwJW_So3vfSN0CjqzxN30H-qEBswqU&amp;usqp=CAU" tvg-language="English",30A We Love Cars - SD
+#EXTINF:-1 tvg-id="30AWeLoveCars.us" tvg-name="30A We Love Cars - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxroqfE_hvEApKMQx03sSYXPeEh4ClaF5QSa8XfRwJW_So3vfSN0CjqzxN30H-qEBswqU&usqp=CAU" tvg-language="English",30A We Love Cars - SD
 https://30a-tv.com/feeds/vidaa/cars.m3u8
 #EXTINF:-1 tvg-id="3ABNEnglish.us" tvg-name="3ABN English - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/16DMxP4.png" tvg-language="English",3ABN English - SD
 https://3abn.bozztv.com/3abn2/3abn_live/smil:3abn_live.smil/playlist.m3u8
@@ -1386,13 +1385,13 @@ https://a-cdn.klowdtv.com/live1/aweint/playlist.m3u8
 https://a-cdn.herringnetwork.com/affiliate/awee/playlist.m3u8
 #EXTINF:-1 tvg-id="BBCFood.us" tvg-name="BBC Food - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/kcmHcSx.png" tvg-language="English",BBC Food - SD
 https://d1e9r0b71zfwk7.cloudfront.net/playlist.m3u8
-#EXTINF:-1 tvg-id="BBCHomeGarden.us" tvg-name="BBC Home &amp; Garden - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/rC0pi1D.png" tvg-language="English",BBC Home &amp; Garden - SD
+#EXTINF:-1 tvg-id="BBCHomeGarden.us" tvg-name="BBC Home & Garden - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/rC0pi1D.png" tvg-language="English",BBC Home & Garden - SD
 https://d11r33s5i066xh.cloudfront.net/playlist.m3u8
-#EXTINF:-1 tvg-id="BeachTVFloridaAlabama.us" tvg-name="Beach TV Florida &amp; Alabama - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/weypM9C.png" tvg-language="English",Beach TV Florida &amp; Alabama - SD
+#EXTINF:-1 tvg-id="BeachTVFloridaAlabama.us" tvg-name="Beach TV Florida & Alabama - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/weypM9C.png" tvg-language="English",Beach TV Florida & Alabama - SD
 http://media4.tripsmarter.com:1935/LiveTV/DTVHD/playlist.m3u8
-#EXTINF:-1 tvg-id="BeachTVKeyWestFloridaKeys.us" tvg-name="Beach TV Key West &amp; Florida Keys - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/XhDBdff.png" tvg-language="English",Beach TV Key West &amp; Florida Keys - SD
+#EXTINF:-1 tvg-id="BeachTVKeyWestFloridaKeys.us" tvg-name="Beach TV Key West & Florida Keys - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/XhDBdff.png" tvg-language="English",Beach TV Key West & Florida Keys - SD
 https://5ed325193d4e1.streamlock.net:444/LiveTV/KTVHD/playlist.m3u8
-#EXTINF:-1 tvg-id="BeachTVMyrtleBeachTheGrandStrand.us" tvg-name="Beach TV Myrtle Beach &amp; The Grand Strand - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/aLYz7Bv.png" tvg-language="English",Beach TV Myrtle Beach &amp; The Grand Strand - SD
+#EXTINF:-1 tvg-id="BeachTVMyrtleBeachTheGrandStrand.us" tvg-name="Beach TV Myrtle Beach & The Grand Strand - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/aLYz7Bv.png" tvg-language="English",Beach TV Myrtle Beach & The Grand Strand - SD
 http://media4.tripsmarter.com:1935/LiveTV/MTVHD/playlist.m3u8
 #EXTINF:-1 tvg-id="BeachTVPanamaCity.us" tvg-name="Beach TV Panama City - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/HCQDvEe.png" tvg-language="English",Beach TV Panama City - SD
 http://media4.tripsmarter.com:1935/LiveTV/BTVHD/playlist.m3u8
@@ -1408,7 +1407,7 @@ https://tgn.bozztv.com/betterlife/betterlife/betterlife/index.m3u8
 https://jmp2.uk/plu-5f7796e470510900070d4e3d.m3u8
 #EXTINF:-1 tvg-id="BigTenNetwork.us" tvg-name="Big Ten Network - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Big_Ten_Network_Logo.svg/960px-Big_Ten_Network_Logo.svg.png" tvg-language="English",Big Ten Network - SD
 http://23.237.104.106:8080/USA_BTN/index.m3u8
-#EXTINF:-1 tvg-id="BizTV.us" tvg-name="Biz TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc9BALoDt-xvKETysdwh4x_G7ZEQ94RYxE-A&amp;s" tvg-language="English",Biz TV - SD
+#EXTINF:-1 tvg-id="BizTV.us" tvg-name="Biz TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc9BALoDt-xvKETysdwh4x_G7ZEQ94RYxE-A&s" tvg-language="English",Biz TV - SD
 https://2-fss-1.streamhoster.com/pl_154/205722-2251224-1/playlist.m3u8
 #EXTINF:-1 tvg-id="BlackFamilySitcoms.us" tvg-name="Black Family Sitcoms - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://images.pluto.tv/channels/686d61503484d6073283059d/colorLogoPNG_1752619670829.png" tvg-language="English",Black Family Sitcoms - SD
 https://jmp2.uk/plu-686d61503484d6073283059d.m3u8
@@ -1420,7 +1419,7 @@ https://bloomberg.com/media-manifest/streams/politics.m3u8
 http://23.237.104.106:8080/USA_BLOOMBERG/index.m3u8
 #EXTINF:-1 tvg-id="bonappetit.us" tvg-name="bon appetit - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/YhFFxlE.png" tvg-language="English",bon appetit - SD
 https://bonappetit-samsung.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="Bounce.us" tvg-name="Bounce - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovgIthNmn9MgjbnrOV5Y_1fY8XLnmADvmGGUlACeIClMVnUaiTwBhYvyo0vKn4RQAfBk&amp;usqp=CAU" tvg-language="English",Bounce - SD
+#EXTINF:-1 tvg-id="Bounce.us" tvg-name="Bounce - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRovgIthNmn9MgjbnrOV5Y_1fY8XLnmADvmGGUlACeIClMVnUaiTwBhYvyo0vKn4RQAfBk&usqp=CAU" tvg-language="English",Bounce - SD
 http://23.237.104.106:8080/USA_BOUNCE/index.m3u8
 #EXTINF:-1 tvg-id="Bravo.us" tvg-name="Bravo - East" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/JmTIRLF.png" tvg-language="English",Bravo - East
 http://41.205.93.154/BRAVO/index.m3u8
@@ -1496,7 +1495,7 @@ https://jmp2.uk/plu-604928d54a4f730007ff76bc.m3u8
 https://d3k5y954fiztgy.cloudfront.net/FREECAST/CTN-2b0dd347-f7b0-e7ed-9096-68966d29db50/index.m3u8
 #EXTINF:-1 tvg-id="DaystarTV.us" tvg-name="Daystar TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/IjzCv8f.png" tvg-language="English",Daystar TV - SD
 https://live-mcl.cdn01.net/smarttv/48vy43564/playlist.m3u8
-#EXTINF:-1 tvg-id="DaystarTVEspanol.us" tvg-name="Daystar TV Espanol - SD" group-title="🇺🇸 USA • 📺 General • Español" tvg-logo="https://espanol.daystar.com/hs-fs/hubfs/Logos/Daystar_Espanol_Logo_White-sm.png?width=300&amp;height=116&amp;name=Daystar_Espanol_Logo_White-sm.png" tvg-language="Español",Daystar TV Espanol - SD
+#EXTINF:-1 tvg-id="DaystarTVEspanol.us" tvg-name="Daystar TV Espanol - SD" group-title="🇺🇸 USA • 📺 General • Español" tvg-logo="https://espanol.daystar.com/hs-fs/hubfs/Logos/Daystar_Espanol_Logo_White-sm.png?width=300&height=116&name=Daystar_Espanol_Logo_White-sm.png" tvg-language="Español",Daystar TV Espanol - SD
 https://live-mcl.cdn01.net/smarttv/64wj6m6d8/playlist.m3u8
 #EXTINF:-1 tvg-id="DistrictofColumbiaNetwork.us" tvg-name="District of Columbia Network - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/GGZ8BQ8.png" tvg-language="English",District of Columbia Network - SD
 https://video.oct.dc.gov/out/u/DCN.m3u8
@@ -1524,7 +1523,7 @@ http://livestreamcdn.net:1935/ExtremaTV/ExtremaTV/playlist.m3u8
 https://failarmy-international-au.samsung.wurl.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="FaithTV.us" tvg-name="Faith TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/lUBnKK1.png" tvg-language="English",Faith TV - SD
 https://faithnow-hls.secdn.net/faithnow-holland-channel/play/FaithTV.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="FastTV.us" tvg-name="Fast TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://us1-prod-images.disco-api.com/2020/7/13/4f26aaf2-a993-480d-9675-0d501fb8d86f.png?bf=0&amp;f=png&amp;p=true&amp;q=85&amp;w=250" tvg-language="English",Fast TV - SD
+#EXTINF:-1 tvg-id="FastTV.us" tvg-name="Fast TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://us1-prod-images.disco-api.com/2020/7/13/4f26aaf2-a993-480d-9675-0d501fb8d86f.png?bf=0&f=png&p=true&q=85&w=250" tvg-language="English",Fast TV - SD
 https://live-manifest.production-public.tubi.io/live/e7be5ad5-9044-4151-95d4-a9aae10ab0a5/playlist.m3u8
 #EXTINF:-1 tvg-id="FierroaFondoTV.us" tvg-name="Fierro a Fondo TV - SD" group-title="🇺🇸 USA • 📺 General • Español" tvg-logo="https://pbs.twimg.com/profile_images/1903618079696773120/maQJpd9__400x400.jpg" tvg-language="Español",Fierro a Fondo TV - SD
 http://45.70.201.81:8000/play/a00x/index.m3u8
@@ -1532,7 +1531,7 @@ http://45.70.201.81:8000/play/a00x/index.m3u8
 https://cdn.vegasplus.us/vegas/ftv/playlist.m3u8
 #EXTINF:-1 tvg-id="FlowersTVUSA.us" tvg-name="Flowers TV USA - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://upload.wikimedia.org/wikipedia/ml/1/1c/Flowers-Onam.png" tvg-language="English",Flowers TV USA - SD
 https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/flowers_nim_https/050522/flowers/playlist.m3u8
-#EXTINF:-1 tvg-id="FNX.us" tvg-name="FNX - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgk7_TfPsHId-ynXuGaTMc13M2gcc4SG7cVw&amp;s" tvg-language="English",FNX - SD
+#EXTINF:-1 tvg-id="FNX.us" tvg-name="FNX - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgk7_TfPsHId-ynXuGaTMc13M2gcc4SG7cVw&s" tvg-language="English",FNX - SD
 https://fnx.lls.pbs.org/index.m3u8
 #EXTINF:-1 tvg-id="Fox.us" tvg-name="Fox - East" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://static.wikia.nocookie.net/tvstations/images/8/8e/KBSIO6.png" tvg-language="English",Fox - East
 http://stream.cammonitorplus.net/1752/index.m3u8
@@ -1786,7 +1785,7 @@ https://a-cdn.klowdtv.com/live3/pursuit_720p/playlist.m3u8
 https://d1p1siomv3cm7b.cloudfront.net/playlist.m3u8
 #EXTINF:-1 tvg-id="QVC.us" tvg-name="QVC - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.pinimg.com/1200x/61/92/cb/6192cba239c6e3cb475c4ea8b53f0c54.jpg" tvg-language="English",QVC - SD
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/master.m3u8
-#EXTINF:-1 tvg-id="QVC2.us" tvg-name="QVC2 - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIPNA49_pDj7O2xfFVC8wTrncxzUXpHyVhcQ&amp;s" tvg-language="English",QVC2 - SD
+#EXTINF:-1 tvg-id="QVC2.us" tvg-name="QVC2 - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIPNA49_pDj7O2xfFVC8wTrncxzUXpHyVhcQ&s" tvg-language="English",QVC2 - SD
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc2us/master.m3u8
 #EXTINF:-1 tvg-id="QVC3.us" tvg-name="QVC3 - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/edswdOO.png" tvg-language="English",QVC3 - SD
 https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc3us/master.m3u8
@@ -2012,7 +2011,7 @@ https://vod2live.univtec.com/manifest/4c41c0d8-e2e4-43cc-bd43-79afe715e1b3.m3u8
 http://23.237.104.106:8080/USA_VICETV/index.m3u8
 #EXTINF:-1 tvg-id="VidaMejorTV.us" tvg-name="Vida Mejor TV - SD" group-title="🇺🇸 USA • 📺 General • Español" tvg-logo="https://i.imgur.com/1hJ16i0.png" tvg-language="Español",Vida Mejor TV - SD
 https://tgn.bozztv.com/betterlife/bettervida/bettervida/index.m3u8
-#EXTINF:-1 tvg-id="VisionLatinaNetwork.us" tvg-name="Vision Latina Network - SD" group-title="🇺🇸 USA • 📺 General • Español" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRMq0HU4qtbhBCyMBZzkHGDftIzWn2jeb1L1L7S9SgsyuzKA4WKyrHI9pfEfsYhhhnSk&amp;usqp=CAU" tvg-language="Español",Vision Latina Network - SD
+#EXTINF:-1 tvg-id="VisionLatinaNetwork.us" tvg-name="Vision Latina Network - SD" group-title="🇺🇸 USA • 📺 General • Español" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRMq0HU4qtbhBCyMBZzkHGDftIzWn2jeb1L1L7S9SgsyuzKA4WKyrHI9pfEfsYhhhnSk&usqp=CAU" tvg-language="Español",Vision Latina Network - SD
 https://cdn-cloudfront.us-east-1.prod.ingest.aws-infra.dacast.com/live/c1804a4c-ccbf-46e5-87c3-0f8d4a94d9e3/master.m3u8
 #EXTINF:-1 tvg-id="VSiN.us" tvg-name="VSiN - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/C4wIRxg.png" tvg-language="English",VSiN - SD
 https://vsin-sgrewind.streamguys1.com/scte/live-2k/playlist.m3u8
@@ -2038,7 +2037,7 @@ https://cdn.whiplash.cc/whiplash-2/index.m3u8
 https://stream.swagit.com/live-edge/whiteplainsny/smil:std-4x3-1-b/playlist.m3u8
 #EXTINF:-1 tvg-id="WindowTV.us" tvg-name="Window TV - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://whiplash.cc/assets/img/channels/windowtv.png" tvg-language="English",Window TV - SD
 https://cdn.whiplash.cc/whiplash-windowtv/index.m3u8
-#EXTINF:-1 tvg-id="WineWatchesWhiskey.us" tvg-name="Wine Watches &amp; Whiskey - HD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/MN89dfS.png" tvg-language="English",Wine Watches &amp; Whiskey - HD
+#EXTINF:-1 tvg-id="WineWatchesWhiskey.us" tvg-name="Wine Watches & Whiskey - HD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/MN89dfS.png" tvg-language="English",Wine Watches & Whiskey - HD
 https://www-on-freecast.b-cdn.net/WWW-on-Freecast/index.m3u8
 #EXTINF:-1 tvg-id="WomensSportsNetwork.us" tvg-name="Women's Sports Network - SD" group-title="🇺🇸 USA • 📺 General" tvg-logo="https://i.imgur.com/rhIwUcQ.png" tvg-language="English",Women's Sports Network - SD
 https://d39accvx65hq9o.cloudfront.net/Womens_Sports_Network.m3u8
@@ -2144,7 +2143,7 @@ https://jmp2.uk/plu-609bfa51fbecc1000733152e.m3u8
 https://aegis-cloudfront-1.tubi.video/475550ae-8708-46a5-a7c3-54acb3d91480/playlist.m3u8
 #EXTINF:-1 tvg-id="JudgeNosey.us" tvg-name="Judge Nosey - US" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://i.imgur.com/S4r98AB.png" tvg-language="English",Judge Nosey - US
 https://amg00514-noseybaxterllc-realnosey-cineverse-tqbpv.amagi.tv/playlist/amg00514-noseybaxterllc-realnosey-cineverse/playlist.m3u8
-#EXTINF:-1 tvg-id="LoveHipHop.us" tvg-name="Love &amp; Hip Hop - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://i.imgur.com/rhGyebf.png" tvg-language="English",Love &amp; Hip Hop - SD
+#EXTINF:-1 tvg-id="LoveHipHop.us" tvg-name="Love & Hip Hop - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://i.imgur.com/rhGyebf.png" tvg-language="English",Love & Hip Hop - SD
 https://jmp2.uk/plu-5d51ddf0369acdb278dfb05e.m3u8
 #EXTINF:-1 tvg-id="Matlock.us" tvg-name="Matlock - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://i.imgur.com/BGFUQsu.png" tvg-language="English",Matlock - SD
 https://jmp2.uk/plu-60f754f98185580007eb0754.m3u8
@@ -2162,7 +2161,7 @@ https://jmp2.uk/plu-6532e6a9bdf3cf000887ab29.m3u8
 https://mst3k-roku.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="NashBridges.us" tvg-name="Nash Bridges - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://images.pluto.tv/channels/666021cccb3ea10008406866/colorLogoPNG.png" tvg-language="English",Nash Bridges - SD
 https://jmp2.uk/plu-666021cccb3ea10008406866.m3u8
-#EXTINF:-1 tvg-id="Nosey.us" tvg-name="Nosey - US" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsv_KrZtWIiODx5w-aXTru0YMO446I8ukXc5P0rPKrQg&amp;s" tvg-language="English",Nosey - US
+#EXTINF:-1 tvg-id="Nosey.us" tvg-name="Nosey - US" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsv_KrZtWIiODx5w-aXTru0YMO446I8ukXc5P0rPKrQg&s" tvg-language="English",Nosey - US
 https://nosey-intl-1-samsungau.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="Novelisima.us" tvg-name="Novelisima - SD" group-title="🇺🇸 USA • 📺 Series • Español" tvg-logo="https://i.imgur.com/8dUS3Ih.png" tvg-language="Español",Novelisima - SD
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=2380
@@ -2246,7 +2245,7 @@ http://45.6.4.35/TELENOVELAS/index.m3u8
 https://d31z96rdrmwfsp.cloudfront.net/master.m3u8
 #EXTINF:-1 tvg-id="WeTV.us" tvg-name="We TV - East" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Wetv-july-2024-logo.svg/3840px-Wetv-july-2024-logo.svg.png" tvg-language="English",We TV - East
 http://23.237.104.106:8080/USA_WE_TV/index.m3u8
-#EXTINF:-1 tvg-id="WeedsNurseJackie.us" tvg-name="Weeds &amp; Nurse Jackie - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://images.pluto.tv/channels/688a44cf5d73ec0a3f49718b/colorLogoPNG_1756145413989.png" tvg-language="English",Weeds &amp; Nurse Jackie - SD
+#EXTINF:-1 tvg-id="WeedsNurseJackie.us" tvg-name="Weeds & Nurse Jackie - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://images.pluto.tv/channels/688a44cf5d73ec0a3f49718b/colorLogoPNG_1756145413989.png" tvg-language="English",Weeds & Nurse Jackie - SD
 https://jmp2.uk/plu-688a44cf5d73ec0a3f49718b.m3u8
 #EXTINF:-1 tvg-id="WildNOut.us" tvg-name="Wild 'N Out - SD" group-title="🇺🇸 USA • 📺 Series" tvg-logo="https://www.samsung.com/us/smg/content/dam/s7/home/televisions-and-home-theater/tvs/tv-plus/all-channels/08182020/Wild%20N%20Out_190x190.png?raw=true" tvg-language="English",Wild 'N Out - SD
 https://jmp2.uk/plu-5d48678d34ceb37d3c458a55.m3u8
@@ -2310,7 +2309,7 @@ https://cdn.streamhispanatv.net:3011/live/mastvgtlive.m3u8
 https://eu1.servers10.com:8081/8338/index.m3u8
 #EXTINF:-1 tvg-id="NuestraImagenTV.gt" tvg-name="Nuestra Imagen TV - SD" group-title="🇬🇹 GUATEMALA • 📺 General • Español" tvg-logo="https://i.imgur.com/sknLXZI.jpeg" tvg-language="Español",Nuestra Imagen TV - SD
 https://live.tvcontrolcp.com:1936/tvnitelevision/tvnitelevision/playlist.m3u8
-#EXTINF:-1 tvg-id="PenielKY.gt" tvg-name="Peniel K&amp;Y - SD" group-title="🇬🇹 GUATEMALA • 📺 General • Español" tvg-logo="https://i.imgur.com/YtPRKmS.png" tvg-language="Español",Peniel K&amp;Y - SD
+#EXTINF:-1 tvg-id="PenielKY.gt" tvg-name="Peniel K&Y - SD" group-title="🇬🇹 GUATEMALA • 📺 General • Español" tvg-logo="https://i.imgur.com/YtPRKmS.png" tvg-language="Español",Peniel K&Y - SD
 https://s.emisoras.tv:8081/penielkids/index.m3u8
 #EXTINF:-1 tvg-id="PenielMusical.gt" tvg-name="Peniel Musical - SD" group-title="🇬🇹 GUATEMALA • 📺 General • Español" tvg-logo="https://i.imgur.com/IFQbGEf.png" tvg-language="Español",Peniel Musical - SD
 https://s.emisoras.tv:8081/penielmusical/index.m3u8
@@ -2424,7 +2423,7 @@ https://jmp2.uk/plu-5f1aadf373bed3000794d1d7.m3u8
 https://jmp2.uk/plu-63eb9495a8b227000841bf64.m3u8
 #EXTINF:-1 tvg-id="PlutoTVGasolina.de" tvg-name="Pluto TV Gasolina - ES" group-title="🇪🇸 ESPAÑA • 🎭 Entertainment • Español" tvg-logo="https://images.pluto.tv/channels/65bd0f53dc10a40008e68b96/colorLogoPNG_1747382175081.png" tvg-language="Español",Pluto TV Gasolina - ES
 https://jmp2.uk/plu-65bd0f53dc10a40008e68b96.m3u8
-#EXTINF:-1 tvg-id="PlutoTVGoreSlasher.de" tvg-name="Pluto TV Gore &amp; Slasher - ES" group-title="🇪🇸 ESPAÑA • 🎭 Entertainment • Español" tvg-logo="https://images.pluto.tv/channels/66b0dfa1d512590008bfa7fd/colorLogoPNG.png" tvg-language="Español",Pluto TV Gore &amp; Slasher - ES
+#EXTINF:-1 tvg-id="PlutoTVGoreSlasher.de" tvg-name="Pluto TV Gore & Slasher - ES" group-title="🇪🇸 ESPAÑA • 🎭 Entertainment • Español" tvg-logo="https://images.pluto.tv/channels/66b0dfa1d512590008bfa7fd/colorLogoPNG.png" tvg-language="Español",Pluto TV Gore & Slasher - ES
 https://jmp2.uk/plu-66b0dfa1d512590008bfa7fd.m3u8
 #EXTINF:-1 tvg-id="PlutoTVImpacto.de" tvg-name="Pluto TV Impacto - ES" group-title="🇪🇸 ESPAÑA • 🎭 Entertainment • Español" tvg-logo="https://images.pluto.tv/channels/68adc697116b783a33f99e6c/colorLogoPNG_1760448745473.png" tvg-language="Español",Pluto TV Impacto - ES
 https://jmp2.uk/plu-68adc697116b783a33f99e6c.m3u8
@@ -2472,7 +2471,7 @@ https://the-pet-collective-international-es.samsung.wurl.tv/playlist.m3u8
 https://jmp2.uk/plu-5f984f4a09e92d0007d74647.m3u8
 #EXTINF:-1 tvg-id="CazadordeHomicidas.us" tvg-name="Cazador de Homicidas - Spain" group-title="🇪🇸 ESPAÑA • 📚 Documentary • Español" tvg-logo="https://i.imgur.com/hy6FJLe.png" tvg-language="Español",Cazador de Homicidas - Spain
 https://jmp2.uk/plu-60ed5fb9c4716d0007d180c5.m3u8
-#EXTINF:-1 tvg-id="CrimenHistoria.es" tvg-name="Crimen &amp; Historia - SD" group-title="🇪🇸 ESPAÑA • 📚 Documentary • Español" tvg-logo="https://images.pluto.tv/channels/64ddcbb14c5ed80008fad416/colorLogoPNG.png" tvg-language="Español",Crimen &amp; Historia - SD
+#EXTINF:-1 tvg-id="CrimenHistoria.es" tvg-name="Crimen & Historia - SD" group-title="🇪🇸 ESPAÑA • 📚 Documentary • Español" tvg-logo="https://images.pluto.tv/channels/64ddcbb14c5ed80008fad416/colorLogoPNG.png" tvg-language="Español",Crimen & Historia - SD
 https://jmp2.uk/plu-64ddcbb14c5ed80008fad416.m3u8
 #EXTINF:-1 tvg-id="HistoriaYVida.es" tvg-name="Historia Y Vida - SD" group-title="🇪🇸 ESPAÑA • 📚 Documentary • Español" tvg-logo="https://i.imgur.com/3lbh2X6.png" tvg-language="Español",Historia Y Vida - SD
 https://jmp2.uk/plu-67517f923a61d40008c451f0.m3u8
@@ -2536,7 +2535,7 @@ http://synclosdragos1.syncsolutions.es:8008/live3/emision/index.m3u8
 https://cloud.streamingconnect.tv/hls/estutele/estutele.m3u8
 #EXTINF:-1 tvg-id="ETB1On.es" tvg-name="ETB1 On - HD" group-title="🇪🇸 ESPAÑA • 📺 General" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/52/Logo_ETB1_On_2026.svg" tvg-language="English",ETB1 On - HD
 https://cdn1.etbon.eus/etb1on/index.m3u8
-#EXTINF:-1 tvg-id="EWTN.us" tvg-name="EWTN - Spain &amp; Latin America" group-title="🇪🇸 ESPAÑA • 📺 General • Español" tvg-logo="https://i.imgur.com/sua70RO.png" tvg-language="Español",EWTN - Spain &amp; Latin America
+#EXTINF:-1 tvg-id="EWTN.us" tvg-name="EWTN - Spain & Latin America" group-title="🇪🇸 ESPAÑA • 📺 General • Español" tvg-logo="https://i.imgur.com/sua70RO.png" tvg-language="Español",EWTN - Spain & Latin America
 https://cdn3.wowza.com/1/SmVrQmZCUXZhVDgz/b3J3MFJv/hls/live/playlist.m3u8
 #EXTINF:-1 tvg-id="EWTNEspana.es" tvg-name="EWTN Espana - SD" group-title="🇪🇸 ESPAÑA • 📺 General • Español" tvg-logo="https://i.imgur.com/KvpMbkd.png" tvg-language="Español",EWTN Espana - SD
 https://cdn3.wowza.com/1/SmVrQmZCUXZhVDgz/b3J3MFJv/hls/q6xkg9py/480/chunklist.m3u8
