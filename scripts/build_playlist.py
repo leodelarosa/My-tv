@@ -17,74 +17,99 @@ TARGET_COUNTRIES = {
 }
 
 SPANISH = "spa"
+FRENCH = "fra"
 SPORTS = "sports"
 
 OUTPUT = Path("output/playlist.m3u")
 
+
 # ------------------------------------------------------------
-# Additional public playlists
+# External public playlists
 # ------------------------------------------------------------
 
 EXTERNAL_PLAYLISTS = {
-    "🌎 Free TV Worldwide": (
-        "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
-    ),
+    "🌎 Worldwide - Free TV":
+        "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
 
-    "⚽ Sports Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/sports.m3u"
-    ),
+    "🌎 Worldwide - Sports":
+        "https://iptv-org.github.io/iptv/categories/sports.m3u",
 
-    "🎬 Movies Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/movies.m3u"
-    ),
+    "🌎 Worldwide - Movies":
+        "https://iptv-org.github.io/iptv/categories/movies.m3u",
 
-    "📺 Series Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/series.m3u"
-    ),
+    "🌎 Worldwide - Series":
+        "https://iptv-org.github.io/iptv/categories/series.m3u",
 
-    "🎭 Entertainment Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/entertainment.m3u"
-    ),
+    "🌎 Worldwide - Entertainment":
+        "https://iptv-org.github.io/iptv/categories/entertainment.m3u",
 
-    "📚 Documentary Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/documentary.m3u"
-    ),
+    "🌎 Worldwide - Documentary":
+        "https://iptv-org.github.io/iptv/categories/documentary.m3u",
 
-    "👨‍👩‍👧 Family Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/family.m3u"
-    ),
+    "🌎 Worldwide - Family":
+        "https://iptv-org.github.io/iptv/categories/family.m3u",
 
-    "👦 Kids Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/kids.m3u"
-    ),
+    "🌎 Worldwide - Kids":
+        "https://iptv-org.github.io/iptv/categories/kids.m3u",
 
-    "🎵 Music Worldwide": (
-        "https://iptv-org.github.io/iptv/categories/music.m3u"
-    ),
+    "🌎 Worldwide - Music":
+        "https://iptv-org.github.io/iptv/categories/music.m3u",
 }
 
 
+# ------------------------------------------------------------
+# EPG sources
+# ------------------------------------------------------------
+
+EPG_URLS = [
+    "https://iptv-org.github.io/epg/guides/us/tvtv.us.epg.xml",
+    "https://iptv-org.github.io/epg/guides/ca/tvtv.us.epg.xml",
+    "https://iptv-org.github.io/epg/guides/gt/gatotv.com.epg.xml",
+    "https://iptv-org.github.io/epg/guides/es/ontvtonight.com.epg.xml",
+]
+
+
+# ------------------------------------------------------------
+# Download helpers
+# ------------------------------------------------------------
+
 def download_text(url):
+
     print(f"Downloading {url}")
 
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "my-tv-playlist-builder/2.0"
+            "User-Agent": "my-tv-playlist-builder/3.0"
         },
     )
 
-    with urllib.request.urlopen(request, timeout=90) as response:
-        return response.read().decode("utf-8", errors="replace")
+    with urllib.request.urlopen(
+        request,
+        timeout=90
+    ) as response:
+
+        return response.read().decode(
+            "utf-8",
+            errors="replace"
+        )
 
 
 def fetch_json(name):
+
     return json.loads(
-        download_text(f"{API_BASE}/{name}.json")
+        download_text(
+            f"{API_BASE}/{name}.json"
+        )
     )
 
 
+# ------------------------------------------------------------
+# Text helpers
+# ------------------------------------------------------------
+
 def clean_text(value):
+
     if not value:
         return ""
 
@@ -97,10 +122,19 @@ def clean_text(value):
     )
 
 
+# ------------------------------------------------------------
+# Feed helpers
+# ------------------------------------------------------------
+
 def has_target_area(feed):
 
-    for area in feed.get("broadcast_area", []):
+    for area in feed.get(
+        "broadcast_area",
+        []
+    ):
+
         if area.startswith("c/"):
+
             country = area[2:].upper()
 
             if country in TARGET_COUNTRIES:
@@ -110,18 +144,77 @@ def has_target_area(feed):
 
 
 def is_spanish(feed):
-    return SPANISH in feed.get("languages", [])
+
+    return SPANISH in feed.get(
+        "languages",
+        []
+    )
 
 
-def is_sports(channel):
-    return SPORTS in channel.get("categories", [])
+def is_french(feed):
 
+    return FRENCH in feed.get(
+        "languages",
+        []
+    )
+
+
+# ------------------------------------------------------------
+# Channel categories
+# ------------------------------------------------------------
+
+def get_category(channel):
+
+    categories = channel.get(
+        "categories",
+        []
+    )
+
+    # Priority order matters.
+    # A channel can belong to more than one category.
+
+    if "sports" in categories:
+        return "⚽ Sports"
+
+    if "news" in categories:
+        return "📰 News"
+
+    if "movies" in categories:
+        return "🎬 Movies"
+
+    if "series" in categories:
+        return "📺 Series"
+
+    if "entertainment" in categories:
+        return "🎭 Entertainment"
+
+    if "documentary" in categories:
+        return "📚 Documentary"
+
+    if "family" in categories:
+        return "👨‍👩‍👧 Family"
+
+    if "kids" in categories:
+        return "👦 Kids"
+
+    if "music" in categories:
+        return "🎵 Music"
+
+    return "📺 General"
+
+
+# ------------------------------------------------------------
+# Stream filtering
+# ------------------------------------------------------------
 
 def stream_is_allowed(stream):
 
     labels = {
         str(label).lower()
-        for label in stream.get("labels", [])
+        for label in stream.get(
+            "labels",
+            []
+        )
     }
 
     if "geo-blocked" in labels:
@@ -130,9 +223,14 @@ def stream_is_allowed(stream):
     if "not 24/7" in labels:
         return False
 
-    url = stream.get("url", "")
+    url = stream.get(
+        "url",
+        ""
+    )
 
-    if not url.startswith(("http://", "https://")):
+    if not url.startswith(
+        ("http://", "https://")
+    ):
         return False
 
     return True
@@ -140,12 +238,16 @@ def stream_is_allowed(stream):
 
 def quality_score(stream):
 
-    quality = stream.get("quality")
+    quality = stream.get(
+        "quality"
+    )
 
     if not quality:
         return 0
 
-    text = str(quality).lower()
+    text = str(
+        quality
+    ).lower()
 
     if "2160" in text or "4k" in text:
         return 2160
@@ -169,10 +271,13 @@ def quality_score(stream):
 
 
 # ------------------------------------------------------------
-# Parse external M3U playlists
+# External M3U parser
 # ------------------------------------------------------------
 
-def parse_m3u(text, default_group):
+def parse_m3u(
+    text,
+    default_group
+):
 
     entries = []
 
@@ -186,7 +291,10 @@ def parse_m3u(text, default_group):
 
     for line in lines:
 
-        if line.startswith("#EXTINF:"):
+        if line.startswith(
+            "#EXTINF:"
+        ):
+
             current_extinf = line
             continue
 
@@ -197,12 +305,14 @@ def parse_m3u(text, default_group):
 
             url = line
 
-            if url.startswith(("http://", "https://")):
+            if url.startswith(
+                ("http://", "https://")
+            ):
 
                 entries.append({
                     "extinf": current_extinf,
                     "url": url,
-                    "group": default_group,
+                    "group": default_group
                 })
 
             current_extinf = None
@@ -210,16 +320,31 @@ def parse_m3u(text, default_group):
     return entries
 
 
-def replace_group_title(extinf, group):
+def replace_group_title(
+    extinf,
+    group
+):
 
-    new_group = clean_text(group)
+    new_group = clean_text(
+        group
+    )
 
     pattern = r'group-title="[^"]*"'
 
-    replacement = f'group-title="{new_group}"'
+    replacement = (
+        f'group-title="{new_group}"'
+    )
 
-    if re.search(pattern, extinf):
-        return re.sub(pattern, replacement, extinf)
+    if re.search(
+        pattern,
+        extinf
+    ):
+
+        return re.sub(
+            pattern,
+            replacement,
+            extinf
+        )
 
     return extinf.replace(
         "#EXTINF:-1 ",
@@ -237,9 +362,14 @@ def add_external_playlist(
 
     try:
 
-        text = download_text(url)
+        text = download_text(
+            url
+        )
 
-        entries = parse_m3u(text, name)
+        entries = parse_m3u(
+            text,
+            name
+        )
 
         added = 0
 
@@ -247,11 +377,12 @@ def add_external_playlist(
 
             stream_url = entry["url"]
 
-            # Prevent duplicates
             if stream_url in seen_urls:
                 continue
 
-            seen_urls.add(stream_url)
+            seen_urls.add(
+                stream_url
+            )
 
             extinf = replace_group_title(
                 entry["extinf"],
@@ -259,7 +390,10 @@ def add_external_playlist(
             )
 
             output_entries.append(
-                (extinf, stream_url)
+                (
+                    extinf,
+                    stream_url
+                )
             )
 
             added += 1
@@ -275,14 +409,131 @@ def add_external_playlist(
         )
 
 
+# ------------------------------------------------------------
+# Build channel EXTINF
+# ------------------------------------------------------------
+
+def build_extinf(
+    channel,
+    feed,
+    logo,
+    country
+):
+
+    channel_id = channel[
+        "id"
+    ]
+
+    channel_name = channel.get(
+        "name",
+        channel_id
+    )
+
+    feed_name = feed.get(
+        "name"
+    )
+
+    display_name = channel_name
+
+    if (
+        feed_name
+        and feed_name != channel_name
+    ):
+
+        display_name = (
+            f"{channel_name} - {feed_name}"
+        )
+
+    category = get_category(
+        channel
+    )
+
+    # Language-specific grouping
+
+    if is_spanish(feed):
+
+        group = (
+            f"{TARGET_COUNTRIES[country]} - "
+            f"{category} - Español"
+        )
+
+    elif is_french(feed):
+
+        group = (
+            f"{TARGET_COUNTRIES[country]} - "
+            f"{category} - Français"
+        )
+
+    else:
+
+        group = (
+            f"{TARGET_COUNTRIES[country]} - "
+            f"{category}"
+        )
+
+    attributes = [
+        f'tvg-id="{clean_text(channel_id)}"',
+        f'tvg-name="{clean_text(display_name)}"',
+        f'group-title="{clean_text(group)}"',
+    ]
+
+    if logo:
+
+        attributes.append(
+            f'tvg-logo="{clean_text(logo)}"'
+        )
+
+    if is_spanish(feed):
+
+        attributes.append(
+            'tvg-language="Español"'
+        )
+
+    elif is_french(feed):
+
+        attributes.append(
+            'tvg-language="Français"'
+        )
+
+    else:
+
+        attributes.append(
+            'tvg-language="English"'
+        )
+
+    return (
+        "#EXTINF:-1 "
+        + " ".join(attributes)
+        + ","
+        + clean_text(display_name)
+    )
+
+
+# ------------------------------------------------------------
+# Main
+# ------------------------------------------------------------
+
 def main():
 
-    print("Loading iptv-org data...")
+    print(
+        "Loading iptv-org data..."
+    )
 
-    channels = fetch_json("channels")
-    feeds = fetch_json("feeds")
-    streams = fetch_json("streams")
-    logos = fetch_json("logos")
+    channels = fetch_json(
+        "channels"
+    )
+
+    feeds = fetch_json(
+        "feeds"
+    )
+
+    streams = fetch_json(
+        "streams"
+    )
+
+    logos = fetch_json(
+        "logos"
+    )
 
     channel_by_id = {
         channel["id"]: channel
@@ -293,66 +544,111 @@ def main():
 
     for feed in feeds:
 
-        channel_id = feed.get("channel")
-        feed_id = feed.get("id")
+        channel_id = feed.get(
+            "channel"
+        )
+
+        feed_id = feed.get(
+            "id"
+        )
 
         if channel_id and feed_id:
-            feeds_by_key[(channel_id, feed_id)] = feed
+
+            feeds_by_key[
+                (channel_id, feed_id)
+            ] = feed
 
     logos_by_channel = {}
 
     for logo in logos:
 
-        if not logo.get("in_use"):
+        if not logo.get(
+            "in_use"
+        ):
             continue
 
-        channel_id = logo.get("channel")
+        channel_id = logo.get(
+            "channel"
+        )
 
-        if channel_id and channel_id not in logos_by_channel:
-            logos_by_channel[channel_id] = logo.get("url")
+        if (
+            channel_id
+            and channel_id not in logos_by_channel
+        ):
 
-    # ------------------------------------------------------------
-    # Select original country streams
-    # ------------------------------------------------------------
+            logos_by_channel[
+                channel_id
+            ] = logo.get("url")
+
+    # --------------------------------------------------------
+    # Select streams
+    # --------------------------------------------------------
 
     selected = {}
 
     for stream in streams:
 
-        channel_id = stream.get("channel")
-        feed_id = stream.get("feed")
+        channel_id = stream.get(
+            "channel"
+        )
+
+        feed_id = stream.get(
+            "feed"
+        )
 
         if not channel_id:
             continue
 
-        channel = channel_by_id.get(channel_id)
+        channel = channel_by_id.get(
+            channel_id
+        )
 
         if not channel:
             continue
 
-        if channel.get("is_nsfw"):
+        if channel.get(
+            "is_nsfw"
+        ):
             continue
 
-        if not stream_is_allowed(stream):
+        if not stream_is_allowed(
+            stream
+        ):
             continue
 
         feed = feeds_by_key.get(
-            (channel_id, feed_id)
+            (
+                channel_id,
+                feed_id
+            )
         )
 
         if not feed:
             continue
 
-        country = has_target_area(feed)
+        country = has_target_area(
+            feed
+        )
 
         if not country:
             continue
 
-        key = (channel_id, feed_id)
+        key = (
+            channel_id,
+            feed_id
+        )
 
-        old = selected.get(key)
+        old = selected.get(
+            key
+        )
 
-        if old is None:
+        if (
+            old is None
+            or quality_score(stream)
+            > quality_score(
+                old["stream"]
+            )
+        ):
 
             selected[key] = {
                 "stream": stream,
@@ -361,80 +657,44 @@ def main():
                 "country": country,
             }
 
-        else:
-
-            if (
-                quality_score(stream)
-                >
-                quality_score(old["stream"])
-            ):
-
-                selected[key] = {
-                    "stream": stream,
-                    "channel": channel,
-                    "feed": feed,
-                    "country": country,
-                }
-
     print(
         f"Selected {len(selected)} country streams."
     )
 
-    # ------------------------------------------------------------
-    # Organize country channels
-    # ------------------------------------------------------------
+    # --------------------------------------------------------
+    # Group streams
+    # --------------------------------------------------------
 
-    country_groups = defaultdict(list)
-    sports = []
+    country_groups = defaultdict(
+        list
+    )
 
     for item in selected.values():
 
-        channel = item["channel"]
+        country_groups[
+            item["country"]
+        ].append(item)
 
-        if is_sports(channel):
-            sports.append(item)
-
-        country = item["country"]
-
-        country_groups[country].append(item)
-
-    for country in country_groups:
-
-        country_groups[country].sort(
-            key=lambda item: (
-                item["channel"].get("name", ""),
-                item["feed"].get("name", ""),
-            )
-        )
-
-    sports.sort(
-        key=lambda item: (
-            item["country"],
-            item["channel"].get("name", ""),
-        )
-    )
-
-    # ------------------------------------------------------------
-    # Build output
-    # ------------------------------------------------------------
+    # --------------------------------------------------------
+    # Output
+    # --------------------------------------------------------
 
     OUTPUT.parent.mkdir(
         parents=True,
         exist_ok=True
     )
 
-    # Keep URLs unique across the entire playlist
     seen_urls = set()
 
     output_entries = []
 
-    # ------------------------------------------------------------
-    # Country sections
-    # ------------------------------------------------------------
+    # --------------------------------------------------------
+    # Country channels
+    # --------------------------------------------------------
 
     for country_code in [
-        "US",
         "CA",
+        "US",
         "GT",
         "ES"
     ]:
@@ -444,169 +704,68 @@ def main():
             []
         )
 
+        items.sort(
+            key=lambda item: (
+                get_category(
+                    item["channel"]
+                ),
+                item["channel"].get(
+                    "name",
+                    ""
+                ),
+                item["feed"].get(
+                    "name",
+                    ""
+                ),
+            )
+        )
+
         for item in items:
 
-            channel = item["channel"]
-            stream = item["stream"]
-            feed = item["feed"]
+            channel = item[
+                "channel"
+            ]
 
-            channel_id = channel["id"]
+            stream = item[
+                "stream"
+            ]
 
-            channel_name = channel.get(
-                "name",
-                channel_id
-            )
-
-            feed_name = feed.get("name")
-
-            display_name = channel_name
-
-            if (
-                feed_name
-                and feed_name != channel_name
-            ):
-                display_name = (
-                    f"{channel_name} - {feed_name}"
-                )
+            feed = item[
+                "feed"
+            ]
 
             logo = logos_by_channel.get(
-                channel_id
+                channel["id"]
             )
 
-            spanish = is_spanish(feed)
-
-            language = (
-                " Español"
-                if spanish
-                else ""
-            )
-
-            group = TARGET_COUNTRIES[
+            extinf = build_extinf(
+                channel,
+                feed,
+                logo,
                 country_code
+            )
+
+            stream_url = stream[
+                "url"
             ]
 
-            attributes = [
-                f'tvg-id="{clean_text(channel_id)}"',
-                f'group-title="{clean_text(group)}"',
-            ]
+            if stream_url in seen_urls:
+                continue
 
-            if logo:
-
-                attributes.append(
-                    f'tvg-logo="{clean_text(logo)}"'
-                )
-
-            if language:
-
-                attributes.append(
-                    'tvg-language="Español"'
-                )
-
-            extinf = (
-                "#EXTINF:-1 "
-                + " ".join(attributes)
-                + ","
-                + clean_text(display_name)
+            seen_urls.add(
+                stream_url
             )
-
-            stream_url = stream["url"]
-
-            if stream_url not in seen_urls:
-
-                seen_urls.add(stream_url)
-
-                output_entries.append(
-                    (extinf, stream_url)
-                )
-
-    # ------------------------------------------------------------
-    # Sports from original country selection
-    # ------------------------------------------------------------
-
-    for item in sports:
-
-        channel = item["channel"]
-        stream = item["stream"]
-        feed = item["feed"]
-
-        channel_id = channel["id"]
-
-        channel_name = channel.get(
-            "name",
-            channel_id
-        )
-
-        feed_name = feed.get("name")
-
-        display_name = channel_name
-
-        if (
-            feed_name
-            and feed_name != channel_name
-        ):
-            display_name = (
-                f"{channel_name} - {feed_name}"
-            )
-
-        logo = logos_by_channel.get(
-            channel_id
-        )
-
-        country = item["country"]
-
-        spanish = is_spanish(feed)
-
-        if spanish:
-
-            group = (
-                "⚽ Sports - Español - "
-                + TARGET_COUNTRIES[country]
-            )
-
-        else:
-
-            group = (
-                "⚽ Sports - "
-                + TARGET_COUNTRIES[country]
-            )
-
-        attributes = [
-            f'tvg-id="{clean_text(channel_id)}"',
-            f'group-title="{clean_text(group)}"',
-        ]
-
-        if logo:
-
-            attributes.append(
-                f'tvg-logo="{clean_text(logo)}"'
-            )
-
-        if spanish:
-
-            attributes.append(
-                'tvg-language="Español"'
-            )
-
-        extinf = (
-            "#EXTINF:-1 "
-            + " ".join(attributes)
-            + ","
-            + clean_text(display_name)
-        )
-
-        stream_url = stream["url"]
-
-        if stream_url not in seen_urls:
-
-            seen_urls.add(stream_url)
 
             output_entries.append(
-                (extinf, stream_url)
+                (
+                    extinf,
+                    stream_url
+                )
             )
 
-    # ------------------------------------------------------------
-    # External public playlists
-    # ------------------------------------------------------------
+    # --------------------------------------------------------
+    # Worldwide public playlists
+    # --------------------------------------------------------
 
     print(
         "\nLoading additional public playlists..."
@@ -621,9 +780,9 @@ def main():
             url
         )
 
-    # ------------------------------------------------------------
-    # Write final playlist
-    # ------------------------------------------------------------
+    # --------------------------------------------------------
+    # Write playlist
+    # --------------------------------------------------------
 
     with OUTPUT.open(
         "w",
@@ -631,10 +790,18 @@ def main():
         newline="\r\n"
     ) as file:
 
-        file.write("#EXTM3U\n")
+        file.write(
+            "#EXTM3U\n"
+        )
+
+        # Multiple EPG sources.
+        # Sparkle can use these to match guide data
+        # against the tvg-id values in the playlist.
 
         file.write(
-            'x-tvg-url="https://iptv-org.github.io/epg/guides/us/epg.xml"\n'
+            'x-tvg-url="'
+            + ",".join(EPG_URLS)
+            + '"\n'
         )
 
         for extinf, stream_url in output_entries:
@@ -649,7 +816,8 @@ def main():
 
     print()
     print(
-        f"FINAL PLAYLIST: {len(output_entries)} unique streams"
+        f"FINAL PLAYLIST: "
+        f"{len(output_entries)} unique streams"
     )
 
     print(
