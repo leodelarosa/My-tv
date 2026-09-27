@@ -1,0 +1,54 @@
+name: Build IPTV Playlist
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Every day at 04:00 UTC
+    - cron: "0 4 * * *"
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate playlist
+        run: |
+          python scripts/build_playlist.py
+
+      - name: Show playlist statistics
+        run: |
+          echo "Playlist entries:"
+          grep -c '^#EXTINF:' output/playlist.m3u || true
+
+      - name: Commit updated playlist
+        run: |
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add output/playlist.m3u
+
+          if git diff --cached --quiet; then
+            echo "No playlist changes."
+          else
+            git commit -m "Update IPTV playlist"
+            git push
+          fi
